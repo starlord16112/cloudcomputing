@@ -1,0 +1,270 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+ul li
+{
+	list-style: none;
+}
+a
+{
+	text-decoration: none;
+}
+.col-1
+{
+	margin: 0 1%;
+	width: 6.333333333%;
+	float: left;
+}
+.col-2
+{
+	margin: 0 1%;
+	width: 14.66666667%;
+	float: left;
+}
+
+.col-3
+{
+	margin: 0 1%;
+	width: 23%;
+	float: left;
+}
+.col-4
+{
+	margin: 0 1%;
+	width: 31.33333333%;
+	float: left;
+}
+.col-5
+{
+	margin: 0 1%;
+	width:39.66666667%;
+	float: left;
+}
+.col-6
+{
+	margin: 0 1%;
+	width: 48%;
+	float: left;
+}
+.col-7
+{
+	margin: 0 1%;
+	width: 56.33333333%;
+	float: left;
+}
+.col-8
+{
+	margin: 0 1%;
+	width: 64.66666667%;
+	float: left;
+}
+.col-9
+{
+	margin: 0 1%;
+	width: 73%;
+	float: left;
+}
+.col-10
+{
+	margin: 0 1%;
+	width:81.33333333%;
+	float: left;
+}
+
+.col-11
+{
+	margin: 0 1%;
+	width: 89.66666667%;
+	float: left;
+}
+.col-12
+{
+	margin: 0 1%;
+	width: 98%;
+	float: left;
+}
+.clearfix:after
+{
+	content: "";
+	display:table;
+	clear: both;
+}
+
+
+
+body{
+	background-color: #F5F5F5;
+}
+.product-content
+{
+	
+	width: 95%;
+	margin: 0px auto;
+	background-color: white;
+	margin-bottom: 15px;
+}
+/*-------------------------css image block*/
+.image__main
+{
+	width: 492px;
+	height: 450px;
+	
+	margin: 15px auto;
+
+}
+.image__main img
+{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.list-item
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.list-item .item{
+
+	width: 80px;
+	height: 80px;
+}
+.list-item .item img
+{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.item:hover img {
+	transform: scale(1.2);
+	transition: 0.4s;
+	cursor: pointer;
+	
+}
+.header
+{
+
+	
+	margin: 20px 30px;
+	    display: flex;
+    justify-content: space-between;
+	align-items: baseline;
+	
+}
+
+/*------------------css phần giá và đặt hàng-----------------*/
+.product-price__detail
+{
+	margin:15px auto;
+}
+.name p
+{
+	font-size: 20px;
+	line-height: 25px;
+}
+.name span
+{
+	font-size: 13px;
+	color:white;
+	background-color: #EE4D2D;
+	border-radius: 2px;
+	padding: 3px;
+	margin: 0 10px 0 0;
+}
+.rate-bar
+{
+	display: flex;
+	margin: 15px 0 30px 0;
+	
+}
+.price{
+
+	margin: 30px 0;
+	background-color: #F5F5F5;
+	padding: 18px;
+}
+.price p
+{
+	font-size: 35px;
+	color:#EE4D2D;	
+}
+
+a#cmt
+{
+	font-size: 105%;
+	color:black;
+
+	position: relative;
+	left: 500px;
+	top:215px;
+	
+	background-color: aqua;
+	
+}
+a#btn-back
+{
+	border-radius: 90px 0 0 90px; 
+	transition: 0.4s;
+	color:black;
+	background-color: white;
+	padding: 10px;
+	border:1px solid #D0011B;
+}
+a#btn-back:hover
+{
+	background-color: #f44336;
+	color: white;
+}
+.add-btn button
+{
+	
+	left: 35px;
+    position: relative;
+    top: 180px;
+	cursor: pointer;
+	color:#D0011B;
+    background-color: #F9E0E3;
+	padding: 10px;
+	border:1px solid #D0011B;
+}
+.share
+{
+	text-align: center;
+	position: relative;
+	top:150px;
+}
+.product-feature
+{
+	margin: 50px 0 0 0;
+}
+.cart button
+{
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
+	
+}
+.cart button:hover {
+	background-color: #f44336;
+	color: white;
+  }
+  .cart i
+  {
+	  font-size: 25px;
+  }
