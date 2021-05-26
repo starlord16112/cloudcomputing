@@ -1,0 +1,51 @@
+.container_a{
+    overflow: hidden;
+    background-color: darkslategray;
+    color: blanchedalmond;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.footer_information{
+   width: 25%;
+   float:left;
+}
+.footer_product{
+    width: 25%;
+    float: left;
+}
+.footer_policy{
+    width: 25%;
+    float: left;
+}
+.footer_contact{
+    width: 25%;
+    float: left;
+}
+
+.footer_a{
+    text-decoration: none;
+    color: white;
+}
+.footer_ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer_information footer_a{
+    border: 1px solid springgreen;
+    border-radius: 30px;
+    color: azure;
+    background-color: rgb(4, 12, 12);
+}
+
+.footer_a:hover{
+    background-color: rgb(20, 20, 20);
+}
+.footer_h1{
+    font-family: fantasy;
+    font-size: 40px;
+}
+.footer_end hr{
+    width: 80%;
+}
