@@ -13,11 +13,11 @@ require_once('db.php');
 <body style="overflow:hidden; background-color:black">
     <div class="container_image">
             <?php
-           echo'<a href="cmt.php?id_tk='.$_GET["id_tk"].'&id_sp='.$_GET["id_sp"].'"><i style="color:white; font-size:30px"class="fas fa-times-circle"></i></a>';
+           echo'<a href="chitietsp.php?id_tk='.$_GET["id_tk"].'&sanpham='.$_GET["sanpham"].'"><i style="color:white; font-size:30px"class="fas fa-times-circle"></i></a>';
                 $sql="select * from binhluansp where binhluansp.id_Bl=".$_GET['id_Bl'];
                 $listimage=executeResuft($sql);
                 foreach($listimage as $li)
-                    echo'<div style="width: 500px; height:500px; margin:100px 500px 200px 500px" ><img style="width: 100%; height:100%;" src="img/'.$li['hinhanh'].'" alt=""></div>';
+                    echo'<div style="width: 500px; height:500px; margin:50px 600px 200px 430px" ><img style="width: 100%; height:100%;" src="imgcmt/'.$li['hinhanh'].'" alt=""></div>';
             ?>
     </div>
 </body>

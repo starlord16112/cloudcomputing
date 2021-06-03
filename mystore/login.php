@@ -19,11 +19,15 @@
                 
                if($data['quyendn']==1)
                {
-                    header('location:admin.php');
+               
+                echo '<script>alert("Đăng nhập thành công")</script>';
+                echo '<script>window.location="index.php"</script>';
+                   
                }
                else
                {
-                header('location:index.php');
+                echo '<script>alert("Đăng nhập thành công")</script>';
+                echo '<script>window.location="index.php"</script>';
                }
             }
             else{

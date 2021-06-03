@@ -1,6 +1,6 @@
-<?php
+    <?php
 require_once('db.php');
-$id_tk;
+$user=(isset($_SESSION['user'])?$_SESSION['user']:[]);
 ?>
 <?php
     if(isset($_POST['save'])&&$_POST['evaluate']!=''&& $_POST['comment1']!=''){
@@ -65,7 +65,15 @@ $id_tk;
                 }
                 echo '<br><br>';
                 echo '<div class="element_bl">'.$listcm['ND'].'</div><br><br>';
-                echo '<div class="element_bl"><a href="img.php?id_tk='.$_GET["id_tk"].'&id_sp='.$listcm["id_sp"].'&id_Bl='.$listcm["id_Bl"].'"><img style="width: 100px; height: 100px;filter: drop-shadow(0 0 5px white);" src="imgcmt/'.$listcm['hinhanh'].'"></a></div><br><br>'; 
+                $getid;
+                if(isset($_GET['id_tk']))
+                {
+                    $getid='id_tk='.$_GET["id_tk"];
+                }
+                else{
+                    $getid='';
+                }
+                echo '<div class="element_bl"><a href="img.php?'.$getid.'&sanpham='.$listcm["id_sp"].'&id_Bl='.$listcm["id_Bl"].'"><img style="width: 100px; height: 100px;filter: drop-shadow(0 0 5px white);" src="imgcmt/'.$listcm['hinhanh'].'"></a></div><br><br>'; 
                 echo '<div class="element_bl" style="color:rgba(0,0,0,.54)">'.$listcm['ngaybinhluan'].'</div>';
                 echo '<hr style="width: 100%;">';
                 echo '<br>';

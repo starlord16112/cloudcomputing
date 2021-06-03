@@ -59,7 +59,7 @@
                                             <div class="product-item-price-sale">đ'.$row['gia_sp'].'</div>
                                         </div>
                                             <div class="product-item-seen">Số lượng còn '.$row['soluong_ton'].'</div>
-                                            <div class="product-item-sold-text">Đã bán '.$row['soluotxem'].'</div>
+                                            <div class="product-item-sold-text">Đã bán '.$row['daban'].'</div>
                                         <div class="product-item-address">'.$row['xuat_xu'].'</div>
                                     </a>
                                 </div>

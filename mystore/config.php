@@ -1,3 +1,4 @@
+  
 <?php
 define('HOST','localhost');
 define('DATABASE','cuahangbandogiadung');

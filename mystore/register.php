@@ -30,16 +30,16 @@
         {
             $pass=md5($pass);
             $sqlquery2 = "INSERT INTO `tai_khoan`(`email`, `pass`) VALUES ('$email','$pass')";
-            $result2=mysqli_query($conn,$sqlquery2);
-        
-            if($result2)
-            {
-               
-                echo '<script language="javascript">';
-                echo 'alert("Đăng ký thành công!")';
-                echo '</script>';
+            if ($conn->query($sqlquery2) === TRUE) {
+                $last_id = $conn->insert_id;
+                $sqlquery3 = "INSERT INTO gio_hang(id_tk) VALUES ('$last_id')";
+                if($conn->query($sqlquery3) === TRUE)
+                {
+                    echo '<script>alert("Đăng kí thành công")</script>';
+                }
+              } 
 
-            }
+           
         }
     }
 ?>

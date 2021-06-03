@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $user=(isset($_SESSION['user'])?$_SESSION['user']:[]);
 $idtk =  $user['id_tk'];
 ?>
@@ -23,7 +24,7 @@ include 'connect.php';
    $mydate = getdate(date("U"));
    $time = $mydate['weekday'].",".$mydate['month'].",".$mydate['mday'].",".$mydate['year'];
    $ghichu =  $_SESSION['mota']." tổng tiền là: ".$_SESSION['tongtien'];
-    
+   
    $sql = "SELECT id_tk FROM khachhang";
    $result = $conn->query($sql);
    
@@ -34,7 +35,26 @@ include 'connect.php';
        $i = $i + 1;
 
      }
-     if(!in_array($idtk, $arr))
+     /* cập nhật số lượng*/
+     foreach ($_SESSION['tt-donhang'] as $key => $value) {
+      $sql1 = "SELECT conlai,daban FROM khohang WHERE id_sp = '$key'";
+      $result = $conn->query($sql1);
+      while($row = $result->fetch_assoc()) {
+            $slt = (int)$row['conlai'] - (int)$value;
+            
+            $dban = (int)$row['daban'] + (int)$value;
+      }
+       $sql2 = "UPDATE khohang SET conlai='$slt',daban = '$dban' WHERE id_sp='$key'";
+       if ($conn->query($sql2) === TRUE) {       
+      } 
+      else
+      {
+        echo "có lỗi cập nhật số lượng sản phẩm";
+      }
+     }
+   /*--------------------------*/
+    
+     if(!in_array($idtk, $arr))/* kiểm tra xem người dùng đã có tài khoản chưa */
      {
       if($conn->query("INSERT INTO khachhang(ten_kh,id_tk,diachi,sdt) VALUES ('$ten','$idtk','$dc','$sdt')") === TRUE)
       {
@@ -43,8 +63,11 @@ include 'connect.php';
         {
           echo "<script>alert('đặt hàng thành công')</script>";
           ?>
+            <div style="text-align:center;
+          margin: 150px 0;">
+        <div>  <img src="https://docs.microsoft.com/vi-vn/visualstudio/ide/media/github-success-signin.png?view=vs-2019" alt=""></div>
           <a href="index.php"><button type="button" class="btn btn-primary">Quay về trang chủ</button></a>
- 
+ </div>
           <?php
         }
       }
@@ -62,7 +85,11 @@ include 'connect.php';
         {
           echo "<script>alert('đặt hàng thành công')</script>";
           ?>
-           <a href="index.php"><button type="button" class="btn btn-primary">Quay về trang chủ</button></a>
+          <div style="text-align:center;
+          margin: 150px 0;">
+          <div><img src="https://docs.microsoft.com/vi-vn/visualstudio/ide/media/github-success-signin.png?view=vs-2019" alt=""></div>
+           <a style="" href="index.php"><button type="button" class="btn btn-primary">Quay về trang chủ</button></a>
+           </div>
           <?php
         }
 
@@ -76,6 +103,6 @@ else
 
 
 ?>
-<img style=""src="assets/img/success1.png" alt="">
+
 </body>
 </html>
